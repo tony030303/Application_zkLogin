@@ -7,7 +7,9 @@
 
 
 > Authors: Sthefany Cedeño, Antonio Sarmiento
+
 > Professor: Marco Zecchini
+
 > Project Submission: September 10, 2026.
 
 ![CI](https://github.com/tony030303/Application_zkLogin/actions/workflows/ci.yml/badge.svg)
