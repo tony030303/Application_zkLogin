@@ -2,12 +2,15 @@
 
 > Coursework project extending **zkLogin: Privacy-Preserving Blockchain
 > Authentication with Existing Credentials** (Baldimtsi et al., ACM CCS 2024).
-> https://arxiv.org/pdf/2401.11735
+> link to the paper: https://arxiv.org/pdf/2401.11735
+
+
+
 > Authors: Sthefany Cedeño, Antonio Sarmiento
 > Professor: Marco Zecchini
 > Project Submission: September 10, 2026.
 
-![CI](https://github.com/tony030303/-/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/tony030303/Application_zkLogin/actions/workflows/ci.yml/badge.svg)
 
 ---
 
