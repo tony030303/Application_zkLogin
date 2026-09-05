@@ -1,0 +1,9 @@
+node_modules/
+build/*.ptau
+build/*.wtns
+build/sig_verify_js/
+# Keep the small, meaningful artifacts (r1cs stats, zkey, verification key,
+# proof/public examples, benchmark CSVs) but ignore huge/regeneratable ones.
+!build/verification_key.json
+!build/benchmark_results.csv
+!build/benchmark_meta.json

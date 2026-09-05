@@ -1,0 +1,18 @@
+{
+  "name": "zklogin-mini",
+  "version": "0.1.0",
+  "description": "Minimal ZK-friendly re-implementation of zkLogin's core statement (EdDSA-Poseidon signature + salted address binding), built for coursework extending the zkLogin (CCS'24) paper.",
+  "scripts": {
+    "test": "mocha test --timeout 120000"
+  },
+  "devDependencies": {
+    "circomlib": "^2.0.5",
+    "circom_tester": "^0.0.20",
+    "mocha": "^10.4.0",
+    "chai": "^4.4.1"
+  },
+  "dependencies": {
+    "snarkjs": "^0.7.4",
+    "circomlibjs": "^0.1.7"
+  }
+}
