@@ -18,6 +18,11 @@ const BUILD = path.join(__dirname, "..", "build");
 const WASM = path.join(BUILD, "sig_verify_js", "sig_verify.wasm");
 const ZKEY = path.join(BUILD, "sig_verify_final.zkey");
 const VKEY = JSON.parse(fs.readFileSync(path.join(BUILD, "verification_key.json")));
+const BENCHMARKS = path.join(__dirname, "..", "benchmarks");
+
+if (!fs.existsSync(BENCHMARKS)) {
+  fs.mkdirSync(BENCHMARKS, { recursive: true });
+}
 
 function now() {
   return Number(process.hrtime.bigint()) / 1e6; // ms
@@ -56,7 +61,7 @@ async function main() {
   }
 
   const csv = rows.map((r) => r.join(",")).join("\n") + "\n";
-  fs.writeFileSync(path.join(BUILD, "benchmark_results.csv"), csv);
+  fs.writeFileSync(path.join(BENCHMARKS, "benchmark_results.csv"), csv);
 
   const meta = {
     node: process.version,
@@ -66,9 +71,9 @@ async function main() {
     circom_version: execSync("circom --version").toString().trim(),
     runs: N,
   };
-  fs.writeFileSync(path.join(BUILD, "benchmark_meta.json"), JSON.stringify(meta, null, 2));
+  fs.writeFileSync(path.join(BENCHMARKS, "benchmark_meta.json"), JSON.stringify(meta, null, 2));
 
-  console.log("\nSaved build/benchmark_results.csv and build/benchmark_meta.json");
+  console.log("\nSaved benchmarks/benchmark_results.csv and benchmarks/benchmark_meta.json");
 }
 
 main().catch((e) => {

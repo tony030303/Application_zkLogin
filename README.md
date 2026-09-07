@@ -4,8 +4,6 @@
 > Authentication with Existing Credentials** (Baldimtsi et al., ACM CCS 2024).
 > link to the paper: https://arxiv.org/pdf/2401.11735
 
-
-
 > Authors: Sthefany Cedeño, Antonio Sarmiento
 
 > Professor: Marco Zecchini
@@ -138,14 +136,14 @@ every push. [CI link/badge above.]
 **Hardware used:** Intel Core Ultra 9 185H (22 logical CPUs), Windows 10.0.26200 x64, Node v22.14.0, circom 2.2.3.
 
 | Metric                  | This implementation (EdDSA-Poseidon) | zkLogin paper (RSA-2048 + SHA-256)           |
-| ----------------------- | ------------------------------------- | --------------------------------------------- |
-| R1CS constraints        | ~8,700                                | ~1,100,000                                    |
-| Witness generation time | 265.7 ms ± 12.2 ms                    | not separately reported                       |
-| Proving time            | 1047.3 ms ± 54.7 ms                   | 2.1s ± 0.15s (server-side, delegated)          |
-| Verification time       | 29.2 ms ± 4.8 ms                      | 2.04 ms (Apple M1 Pro)                        |
-| Proof size               | ~724 bytes (constant across runs)     | ~1300 bytes (base64, full zkLogin signature)  |
+| ----------------------- | ------------------------------------ | -------------------------------------------- |
+| R1CS constraints        | ~8,700                               | ~1,100,000                                   |
+| Witness generation time | 265.7 ms ± 12.2 ms                   | not separately reported                      |
+| Proving time            | 1047.3 ms ± 54.7 ms                  | 2.1s ± 0.15s (server-side, delegated)        |
+| Verification time       | 29.2 ms ± 4.8 ms                     | 2.04 ms (Apple M1 Pro)                       |
+| Proof size              | ~724 bytes (constant across runs)    | ~1300 bytes (base64, full zkLogin signature) |
 
-*20 runs total; run 0 excluded from the proving average (JIT/WASM warm-up:
+\*20 runs total; run 0 excluded from the proving average (JIT/WASM warm-up:
 2196 ms vs. ~1000-1200 ms steady-state), run 11 excluded from the
 verification average (148 ms outlier, likely a GC/OS scheduling pause).
 
@@ -177,7 +175,9 @@ scripts/setup.sh               # compile + local trusted setup (Groth16)
 scripts/prove.sh               # generate a sample proof, with timing
 scripts/verify.sh              # verify a generated proof, with timing
 scripts/benchmark.js           # run N proofs, write raw CSV measurements
+benchmarks/                    # generated execution metrics (CSV) and hardware metadata (JSON)
 .github/workflows/ci.yml       # CI: compile + run tests on every push
+
 ```
 
 ## Build & run instructions
