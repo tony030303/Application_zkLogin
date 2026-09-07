@@ -1,0 +1,8 @@
+{
+  "node": "v22.14.0",
+  "platform": "Windows_NT 10.0.26200 x64",
+  "cpus": "Intel(R) Core(TM) Ultra 9 185H",
+  "cpu_count": 22,
+  "circom_version": "circom compiler 2.2.3",
+  "runs": 20
+}
