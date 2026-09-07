@@ -199,3 +199,12 @@ bash scripts/verify.sh
 # 3. Benchmarks (raw measurements -> build/benchmark_results.csv)
 node scripts/benchmark.js 20
 ```
+## 7. Work distribution
+
+| Author | Contributions |
+| --- | --- |
+| **Antonio Sarmiento & Sthefany Cedeño (joint)** | Designed and implemented the `sig_verify.circom` circuit (EdDSA-Poseidon signature verification + address binding); wrote the completeness/soundness test suite (`test/completeness_soundness.test.js`). |
+| **Antonio Sarmiento** | Set up the build/proving pipeline (`scripts/setup.sh`, `scripts/prove.sh`, `scripts/verify.sh`, `scripts/gen_input.js`); configured the CI pipeline (`.github/workflows/ci.yml`), including the manually-triggered `full-e2e` job; drafted the initial README (project description, paper analysis, feasibility table). |
+| **Sthefany Cedeño** | Ran the local trusted setup and the benchmarking pipeline (`scripts/benchmark.js`) across 20 runs; analyzed the raw measurements (`build/benchmark_results.csv`, `build/benchmark_meta.json`); completed the Performance section (§6) with the resulting metrics and hardware specs; wrote the interpretation comparing our results against the paper's reported numbers. |
+
+Both authors reviewed and discussed each other's work before submission.
